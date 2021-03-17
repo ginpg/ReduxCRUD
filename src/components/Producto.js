@@ -1,7 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect} from 'react';
 
+import { useDispatch, useSelector } from "react-redux";
+import { obtenerProductosAction} from '../actions/productosAction';
 
 const Productos = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        //Consultar api
+        const cargarProductos = () => dispatch(obtenerProductosAction());
+        cargarProductos();
+    }, []);
+    
     return (
         <Fragment>
 
