@@ -5,13 +5,13 @@ import { obtenerProductosAction} from '../actions/productosAction';
 
 const Productos = () => {
 
-    const dispatch = useDispatch();
+     const dispatch = useDispatch();
 
     useEffect( () => {
         //Consultar api
         const cargarProductos = () => dispatch(obtenerProductosAction());
         cargarProductos();
-    }, []);
+    }, []); 
     
     return (
         <Fragment>

@@ -34,6 +34,16 @@
       "nombre": "Nuevo Producto",
       "precio": 2,
       "id": 7
+    },
+    {
+      "nombre": "Jugo de Pera",
+      "precio": 50,
+      "id": 8
+    },
+    {
+      "nombre": "Jugo de Naranja",
+      "precio": 100,
+      "id": 9
     }
   ]
 }

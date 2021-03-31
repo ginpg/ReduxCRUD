@@ -2,7 +2,7 @@ import {
     AGREGAR_PRODUCTO,
     AGREGAR_PRODUCTO_EXITO,
     AGREGAR_PRODUCTO_ERROR,
-    //COMENZAR_DESCARGA_PRODUCTOS,
+    COMENZAR_DESCARGA_PRODUCTOS,
     DESCARGA_PRODUCTOS_EXITO,
     DESCARGA_PRODUCTOS_ERROR
     } from "../types";
@@ -48,33 +48,35 @@ const agregarProductoError = estado => ({
 
 export function obtenerProductosAction() {
     return async (dispatch) => {
-        //dispatch( descargarProductos() );
+        console.log('1');
+        dispatch( descargarProductos() );
         const respuesta = await clienteAxios.get('/productos');
         dispatch( descargaProductosExitosa(respuesta.data) )
-
-/*         try {
+        console.log('2');
+         try {
             const respuesta = await clienteAxios.get('/productos');
             dispatch( descargaProductosExitosa(respuesta.data) )
         } catch (error) {
-            console.log(error);
+            console.log('0');
             dispatch( descargaProductosError() )
-        } */
+        } 
     }
 }
 
-/* const descargarProductos = () => ({
+ const descargarProductos = () => ({
     type: COMENZAR_DESCARGA_PRODUCTOS,
     payload: true
-}); */
+}); 
 
 const descargaProductosExitosa = productos => ({
     type: DESCARGA_PRODUCTOS_EXITO,
     error: null,
     loading: false,
-    payload: true //productos
+    payload: productos
 
 })
-const descargaProductosError = () => ({
+
+ const descargaProductosError = () => ({
     type: DESCARGA_PRODUCTOS_ERROR, 
     payload: true
-});
+});  
