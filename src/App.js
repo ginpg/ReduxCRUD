@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 //Router es cada pagina
 import Header from './components/Header';
-import Productos from './components/Producto';
+import Productos from './components/Productos';
 import NuevoProducto from './components/NuevoProducto';
 import EditarProducto from './components/EditarProducto';
 
