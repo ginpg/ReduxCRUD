@@ -46,35 +46,32 @@ const agregarProductoError = estado => ({
     payload: estado
 });
 
+//funcion que muestra los productos del a base de datos
+//no toma nada porque viene de la base de datos (GET)
 export function obtenerProductosAction() {
     return async (dispatch) => {
-        console.log('1');
-        dispatch( descargarProductos() );
-        const respuesta = await clienteAxios.get('/productos');
-        dispatch( descargaProductosExitosa(respuesta.data) )
-        console.log('2');
+         dispatch( descargarProductos() );
          try {
-            const respuesta = await clienteAxios.get('/productos');
-            dispatch( descargaProductosExitosa(respuesta.data) )
+            setTimeout( async () => {
+                const respuesta = await clienteAxios.get('/productos');
+                dispatch( descargarProductosExito(respuesta.data) )
+            },3000)
         } catch (error) {
-            console.log('0');
+            console.log(error);
             dispatch( descargaProductosError() )
         } 
     }
 }
 
  const descargarProductos = () => ({
-    type: COMENZAR_DESCARGA_PRODUCTOS,
+    type: COMENZAR_DESCARGA_PRODUCTOS, 
     payload: true
 }); 
 
-const descargaProductosExitosa = productos => ({
+const descargarProductosExito = productos => ({
     type: DESCARGA_PRODUCTOS_EXITO,
-    error: null,
-    loading: false,
     payload: productos
-
-})
+});
 
  const descargaProductosError = () => ({
     type: DESCARGA_PRODUCTOS_ERROR, 

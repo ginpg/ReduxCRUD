@@ -19,7 +19,6 @@ const initialState = {
 
 export default function(state = initialState, action){
 
-    console.log(state)
     switch (action.type) {
 
         case COMENZAR_DESCARGA_PRODUCTOS:
@@ -33,7 +32,7 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 loading: false,
-                error: false,
+                error: null,
                 productos: action.payload
             }
 

@@ -10,7 +10,12 @@ const agregarProducto = () => ({
     payload: true
 });
 
-1. Registrarlo en el type
+        PASOS
+1. Registrarlo en el types -> index
+2. Import type en el action 
+3. Hace un export funtion donde llamas a las funtions que les pasas argumento como payload
+4. Import type en el reducer
+5. Recibe el payload as action.payload
 
 
 
