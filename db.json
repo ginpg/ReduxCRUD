@@ -1,14 +1,14 @@
 {
   "productos": [
     {
-      "nombre": "Jugo de Naranja",
-      "precio": "8",
-      "id": 4
+      "nombre": "Peras",
+      "precio": 1,
+      "id": 1
     },
     {
-      "nombre": "Giselt Grimilda",
-      "precio": "2",
-      "id": 6
+      "nombre": "Manzanas",
+      "precio": 8,
+      "id": 2
     }
   ]
 }
